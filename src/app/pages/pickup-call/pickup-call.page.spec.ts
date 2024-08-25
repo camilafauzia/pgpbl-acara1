@@ -28,6 +28,6 @@ describe('PickupCallPage', () => {
 
     component.newPickupCall();
 
-    expect(router.navigate).toHaveBeenCalledWith(['home']);
+    expect(router.navigate).toHaveBeenCalledWith(['pickup-calls']);
   })
 });

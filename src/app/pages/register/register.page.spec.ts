@@ -29,6 +29,6 @@ describe('RegisterPage', () => {
 
     component.register();
 
-    expect(router.navigate).toHaveBeenCalledWith(['home']);
+    expect(router.navigate).toHaveBeenCalledWith(['pickup-call']);
   })
 });

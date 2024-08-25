@@ -5,7 +5,7 @@ import { LoaderPage } from './loader.page';
 
 const routes: Routes = [
   {
-    path: 'test',
+    path: '',
     component: LoaderPage
   }
 ];

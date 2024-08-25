@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginPageForm } from './login.page.form';
 
 @Component({
@@ -9,25 +9,21 @@ import { LoginPageForm } from './login.page.form';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  form(form: any) {
-    throw new Error('Method not implemented.');
-  }
-
-  // form: FormGroup;
+  form!: FormGroup;
 
   constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    // this.form = new LoginPageForm(this.formBuilder).createForm();
+    this.form = new LoginPageForm(this.formBuilder).createForm();
   }
 
-
-  login(){
-    this.router.navigate(['home']);
+  login() {
+    if (this.form.valid) {
+      this.router.navigate(['home']);
+    }
   }
 
   register() {
     this.router.navigate(['register']);
   }
-
 }
