@@ -1,41 +1,42 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { HomePage } from './home.page';
 import { Router } from '@angular/router';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { HomePage } from './home.page';
 
 describe('HomePage', () => {
-
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
   let router: Router;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePage],
-      imports: [IonicModule.forRoot(), AppRoutingModule]
+      declarations: [ HomePage ],
+      imports: [
+        IonicModule.forRoot(),
+        AppRoutingModule
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);
-    router = TestBed.inject(Router); // Use inject() instead of get()
+    router = TestBed.get(Router);
+
     component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
 
   it('should go to pickup-calls on see all', () => {
-    spyOn(router, 'navigate'); // Fix the spelling and method usage
+    spyOn(router, 'navigate');
 
     component.goToPickupCalls();
 
     expect(router.navigate).toHaveBeenCalledWith(['pickup-calls']);
-  });
+  })
 
-  it('should go to new pickup call on create pickup call', () => {
-    spyOn(router, 'navigate'); // Fix the spelling and method usage
+  it('should go to new pickup-calls on create pickup call', () => {
+    spyOn(router, 'navigate');
 
-    component.newPickupCall(); // Ensure this method is called in your component
+    component.newPickupCall();
 
-    expect(router.navigate).toHaveBeenCalledWith(['pickup-call']);
-  });
-
+    expect(router.navigate).toHaveBeenCalledWith(['pick-up']);
+  })
 });
