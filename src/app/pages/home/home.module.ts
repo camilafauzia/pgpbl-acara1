@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
+
 import { HomePage } from './home.page';
 import { PickupCallCardComponent } from 'src/app/components/pickup-call-card/pickup-call-card.component';
 
@@ -16,8 +18,9 @@ import { PickupCallCardComponent } from 'src/app/components/pickup-call-card/pic
   ],
   declarations: [
     HomePage,
-   PickupCallCardComponent
+    PickupCallCardComponent
   ],
   exports: [PickupCallCardComponent]  // Export the component
 })
+
 export class HomePageModule {}

@@ -11,7 +11,7 @@ export class ErrorMessageComponent  implements OnInit {
   @Input() message: string ='';
   // @Input() field: FormGroup ='';
   @Input() error: string ='';
-  field: any;
+  @Input() field: any;
 
   constructor() { }
 
